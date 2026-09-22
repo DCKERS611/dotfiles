@@ -1,0 +1,11 @@
+[include]
+	path = ~/.gitconfig.local
+
+[core]
+	editor = vim
+
+[color]
+	ui = auto
+
+[init]
+	defaultBranch = main
