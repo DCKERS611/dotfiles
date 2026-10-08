@@ -26,8 +26,8 @@ if has("syntax")
 endif
 
 " Practical defaults inspired by the MIT Missing Semester vimrc.
-" Use hybrid line numbers: absolute for the current line, relative elsewhere.
-set relativenumber
+" Use absolute line numbers.
+set norelativenumber
 
 " Always show the status line.
 set laststatus=2
@@ -140,3 +140,13 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " EasyMotion: 搜索时采用智能大小写
 let g:EasyMotion_smartcase = 1
+
+set clipboard=unnamedplus
+if system('uname -r') =~ "microsoft"
+        augroup Yank
+            autocmd!
+            autocmd TextYankPost * silent! call system('clip.exe', @")
+        augroup END
+endif
+
+autocmd FileType * setlocal formatoptions-=cro

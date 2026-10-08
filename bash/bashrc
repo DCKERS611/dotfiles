@@ -127,3 +127,4 @@ if [[ $- == *i* && -r "$HOME/.local/share/blesh/ble.sh" ]]; then
 fi
 
 alias dc='cd'
+export NVBOARD_HOME=/home/ysyx/ysyx-workbench/nvboard
