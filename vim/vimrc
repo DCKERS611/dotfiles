@@ -150,3 +150,16 @@ if system('uname -r') =~ "microsoft"
 endif
 
 autocmd FileType * setlocal formatoptions-=cro
+
+augroup CodeFormat
+    autocmd!
+    autocmd FileType c,cpp nnoremap <buffer> <F3> :%!clang-format<CR>
+augroup END
+
+
+
+" Verilog/SystemVerilog: four-space indentation.
+augroup verilog_settings
+    autocmd!
+    autocmd FileType verilog,systemverilog,verilog_systemverilog setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab nocindent nosmartindent
+augroup END
